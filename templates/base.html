@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Taqwa EDMS{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      background-color: #0d6efd;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .navbar .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">Taqwa EDMS</div>
+    <div class="nav-links">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('view_notes') }}">View Notes</a>
+      <a href="{{ url_for('add_note') }}">Add Note</a>
+    
+    </div>
+  </div>
+
+  <div class="content">
+    {% block content %}
+    <!-- Contenu spécifique à chaque page -->
+    {% endblock %}
+  </div>
+</body>
+</html>
